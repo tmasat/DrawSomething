@@ -15,11 +15,17 @@ class CanvasView: UIView {
 
         guard let context = UIGraphicsGetCurrentContext() else { return }
 
-        for (i,p) in line.enumerated() {
-            if i == 0 {
-                context.move(to: p)
-            } else {
-                context.addLine(to: p)
+        context.setStrokeColor(UIColor.purple.cgColor)
+        context.setLineWidth(8)
+        context.setLineCap(.butt)
+
+        lines.forEach{ (line) in
+            for (i,p) in line.enumerated() {
+                if i == 0 {
+                    context.move(to: p)
+                } else {
+                    context.addLine(to: p)
+                }
             }
         }
 
@@ -27,11 +33,18 @@ class CanvasView: UIView {
     }
 
     var line = [CGPoint]()
+    var lines = [[CGPoint]]()
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        lines.append([CGPoint]())
+    }
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let point = touches.first?.location(in: nil) else { return }
-        
-        line.append(point)
+        guard var lastLine = lines.popLast() else { return }
+
+        lastLine.append(point)
+        lines.append(lastLine)
         setNeedsDisplay()
     }
 }

@@ -11,9 +11,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        let canvas = CanvasView()
+
+        view.addSubview(canvas)
+        canvas.backgroundColor = .white
+        canvas.frame = view.frame
     }
-
-
 }
 

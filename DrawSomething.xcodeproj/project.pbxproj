@@ -39,6 +39,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		127AF6A525DDAD9F00701A90 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				12C339A625AB85D2001D25DC /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		127AF6A625DDADA400701A90 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				12C339B725AB8B6C001D25DC /* CanvasView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		12C3399625AB85D2001D25DC = {
 			isa = PBXGroup;
 			children = (
@@ -58,14 +74,14 @@
 		12C339A125AB85D2001D25DC /* DrawSomething */ = {
 			isa = PBXGroup;
 			children = (
+				127AF6A625DDADA400701A90 /* Views */,
+				127AF6A525DDAD9F00701A90 /* Controller */,
 				12C339A225AB85D2001D25DC /* AppDelegate.swift */,
 				12C339A425AB85D2001D25DC /* SceneDelegate.swift */,
-				12C339A625AB85D2001D25DC /* ViewController.swift */,
 				12C339A825AB85D2001D25DC /* Main.storyboard */,
 				12C339AB25AB85D4001D25DC /* Assets.xcassets */,
 				12C339AD25AB85D4001D25DC /* LaunchScreen.storyboard */,
 				12C339B025AB85D4001D25DC /* Info.plist */,
-				12C339B725AB8B6C001D25DC /* CanvasView.swift */,
 			);
 			path = DrawSomething;
 			sourceTree = "<group>";

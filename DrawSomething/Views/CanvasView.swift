@@ -18,22 +18,21 @@ class CanvasView: UIView {
 
         guard let context = UIGraphicsGetCurrentContext() else { return }
 
-        context.setStrokeColor(self.strokeColor.cgColor)
+        lines.forEach { (line) in
+            context.setStrokeColor(line.color.cgColor)
+            context.setLineWidth(CGFloat(line.strokeWidth))
+            context.setLineCap(.round)
 
-        context.setLineWidth(CGFloat(strokeWidth))
-        context.setLineCap(.butt)
-
-        lines.forEach{ (line) in
-            for (i,p) in line.enumerated() {
+            for (i,p) in line.points.enumerated() {
                 if i == 0 {
                     context.move(to: p)
                 } else {
                     context.addLine(to: p)
                 }
             }
+            context.strokePath()
         }
 
-        context.strokePath()
     }
 
     func undo() {
@@ -55,17 +54,17 @@ class CanvasView: UIView {
     }
 
     var line = [CGPoint]()
-    var lines = [[CGPoint]]()
+    var lines = [Line]()
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        lines.append([CGPoint]())
+        lines.append(Line.init(strokeWidth: strokeWidth, color: strokeColor, points: []))
     }
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let point = touches.first?.location(in: nil) else { return }
         guard var lastLine = lines.popLast() else { return }
 
-        lastLine.append(point)
+        lastLine.points.append(point)
         lines.append(lastLine)
         setNeedsDisplay()
     }

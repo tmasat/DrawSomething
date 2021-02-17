@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1265EE2925DDC096002473BD /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1265EE2825DDC095002473BD /* Line.swift */; };
 		12C339A325AB85D2001D25DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C339A225AB85D2001D25DC /* AppDelegate.swift */; };
 		12C339A525AB85D2001D25DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C339A425AB85D2001D25DC /* SceneDelegate.swift */; };
 		12C339A725AB85D2001D25DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C339A625AB85D2001D25DC /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1265EE2825DDC095002473BD /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		12C3399F25AB85D2001D25DC /* DrawSomething.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrawSomething.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12C339A225AB85D2001D25DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12C339A425AB85D2001D25DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1265EE2725DDC083002473BD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1265EE2825DDC095002473BD /* Line.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		127AF6A525DDAD9F00701A90 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +84,7 @@
 		12C339A125AB85D2001D25DC /* DrawSomething */ = {
 			isa = PBXGroup;
 			children = (
+				1265EE2725DDC083002473BD /* Models */,
 				127AF6A625DDADA400701A90 /* Views */,
 				127AF6A525DDAD9F00701A90 /* Controller */,
 				12C339A225AB85D2001D25DC /* AppDelegate.swift */,
@@ -160,6 +171,7 @@
 				12C339A325AB85D2001D25DC /* AppDelegate.swift in Sources */,
 				12C339B825AB8B6C001D25DC /* CanvasView.swift in Sources */,
 				12C339A525AB85D2001D25DC /* SceneDelegate.swift in Sources */,
+				1265EE2925DDC096002473BD /* Line.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
